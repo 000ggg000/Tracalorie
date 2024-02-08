@@ -1,5 +1,6 @@
 package lt.techin;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +51,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//li[@id='item-0']/strong[.='Butter: ']")
     WebElement itemNameInList;
 
+
     public MainPage(WebDriver driver) {
 
         super(driver);
@@ -86,7 +88,12 @@ public class MainPage extends BasePage {
     public void deleteItem() {
        editButton.click();
        deleteMealButton.click();
+    }
 
+    public void deleteItemFromManyItems(String item) {
+
+        driver.findElement(By.xpath("//li[@class='collection-item']/strong[contains(text(), '" + item + "')]/../a/i")).click();
+        deleteMealButton.click();
     }
 
     public void clearAll() {
