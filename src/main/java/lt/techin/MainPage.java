@@ -116,4 +116,8 @@ public class MainPage extends BasePage {
     public String totalCaloriesSumText(){
         return totalCaloriesSum.getText();
     }
+
+    public boolean isItemInTheList(String item) {
+        return addedItemList.stream().anyMatch(i-> i.getText().contains(item));
+    }
 }

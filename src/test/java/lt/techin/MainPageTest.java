@@ -16,12 +16,11 @@ public class MainPageTest extends BasePageTest {
     void addTheProductAndCheckIfItIs() {
         MainPage mainPage = new MainPage(driver);
         mainPage.addProduct("Butter", 250);
-        mainPage.addProduct("Butter", 250);
         mainPage.addProduct("Milk", 100);
         System.out.println("text: " + mainPage.itemNameFromList());
         assertEquals(mainPage.sumCalories(mainPage.addedItemList), mainPage.totalCalories(), "The sum wrong calculated.");
-
-//        assertTrue("Butter", mainPage.addedItemList.stream().map(i-> i.getText().contains("Butter")), "The item did not added.");
+        assertTrue( mainPage.isItemInTheList("Butter"), "The item did not added.");
+        assertTrue( mainPage.isItemInTheList("Milk"), "The item did not added.");
         System.out.println("sum calories " + mainPage.sumCalories(mainPage.addedItemList));
     }
     @Test
