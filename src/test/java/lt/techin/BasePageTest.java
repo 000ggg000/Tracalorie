@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class BasePageTest {
     WebDriver driver;
 
@@ -14,8 +16,9 @@ public class BasePageTest {
     @BeforeEach
     void setup() {
         this.driver = new ChromeDriver();
-        this.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+        this.driver.get("https://practice.expandtesting.com/tracalorie/");
         this.driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterEach
@@ -24,11 +27,5 @@ public class BasePageTest {
 //        this.driver.quit();
     }
 
-    public static void waiting() {
-        try {
-            Thread.sleep(3000L);
-        } catch (InterruptedException var1) {
-        }
 
-    }
 }
