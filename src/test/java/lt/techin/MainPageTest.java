@@ -53,9 +53,6 @@ public class MainPageTest extends BasePageTest {
     void deleteItem() {
         MainPage mainPage = new MainPage(driver);
         mainPage.addProduct("Butter", 250);
-        mainPage.addProduct("Milk", 100);
-        mainPage.addProduct("Bread", 150);
-        mainPage.addProduct("Candies", 1050);
         mainPage.deleteItem();
         assertEquals("0", mainPage.totalCaloriesSumText(), "The items were not cleared. ");
     }

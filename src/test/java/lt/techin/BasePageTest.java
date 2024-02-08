@@ -24,7 +24,7 @@ public class BasePageTest {
     @AfterEach
     void closeDown() {
 
-//        this.driver.quit();
+        this.driver.quit();
     }
 
 
